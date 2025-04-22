@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safeworld Systems - Security & IT Solutions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #004494;
+            --accent-color: #ff6b00;
+            --light-gray: #f8f9fa;
+            --dark-gray: #343a40;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand img {
+            height: 50px;
+            visibility: visible;
+        }
+        
+        .nav-link {
+            color: var(--dark-gray) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color) !important;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+
+        .hero {
+            /* background: linear-gradient(nulldeg, rgba(29, 12, 97, 1) 17%, rgba(219, 127, 66, 1) 72%); */
+            background: linear-gradient(rgba(61, 104, 197, 0.6), rgba(223, 106, 27, 0.7)), url('./img/hero-background-img.jpeg') center/cover no-repeat;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        } 
+
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            font-weight: 700;
+            color: var(--dark-gray);
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            height: 100%;
+            background-color: white;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .service-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .service-card .card-body {
+            padding: 25px;
+        }
+        
+        .service-card .card-title {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .testimonial-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 15px;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        
+        .author-info h5 {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .author-info p {
+            margin: 0;
+            color: #6c757d;
+        }
+        
+        .stats-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stats-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .stats-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark-gray);
+        }
+        
+        .stats-label {
+            font-size: 1.1rem;
+            color: #6c757d;
+        }
+        
+        .cta-section {
+            background: linear-gradient(rgba(0, 86, 179, 0.9), rgba(0, 68, 148, 0.9)), url('/api/placeholder/1920/1080') center/cover no-repeat;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .footer {
+            background-color: var(--dark-gray);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .footer h5 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s;
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+        
+        .footer-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .footer-social a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 30px;
+        }
+
+        .carousel-inner {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .carousel-item {
+            height: 500px;
+        }
+        
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .carousel-control-prev, .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.8;
+        }
+        
+        .carousel-control-prev {
+            left: 20px;
+        }
+        
+        .carousel-control-next {
+            right: 20px;
+        }
+        
+        .btn-get-quote {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-get-quote:hover {
+            background-color: #e55f00;
+            border-color: #e55f00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .security-bg {
+            background-color: var(--light-gray);
+        }
+        
+        .quote-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-control {
+            border-radius: 30px;
+            padding: 12px 20px;
+            margin-bottom: 20px;
+        }
+        
+        textarea.form-control {
+            border-radius: 20px;
+        }
+        
+        .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary-color);
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .bg-light-gray {
+            background-color: var(--light-gray);
+        }
+        
+        .partners img {
+            max-height: 100px;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s;
+        }
+        
+        .partners img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        html {
+             scroll-behavior: smooth;
+        }
+
+        #backToTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            font-size: 20px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        #backToTopBtn:hover {
+            background-color: #004494;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/safeworld-logo.png" alt="Safeworld Systems Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="security-systems.html">Security Systems</a></li>
+                            <li><a class="dropdown-item" href="it-services.html">IT Services</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="consultation.html">Consultation</a></li>
+                        </ul>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Contact</a>
+                    </li>
+                </ul>
+                <a href="#quote" class="btn btn-primary ms-3">Request Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero position-relative">
+        <!-- Background Image -->
+        <!-- <img src="img/hikvision-dome-camera.png" alt="Hero Background" class="hero-bg"> -->
+    
+        <!-- Overlay Content -->
+        <div class="container position-relative text-white text-center z-2">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="mb-4">Advanced Security & IT Solutions</h1>
+                    <p class="mb-4">Protecting your business with cutting-edge security systems and comprehensive IT services. Your safety is our priority.</p>
+                    <div class="mt-4">
+                        <a href="#quote" class="btn btn-primary me-3">Get a Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Carousel -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="text-center section-title">Protection For All Environments</h2>
+            
+            <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/commercial-security-img.jpg" class="d-block w-100" alt="Commercial Security">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Commercial Security Solutions</h3>
+                            <p>Protecting businesses with integrated security systems tailored to your industry needs.</p>
+                            <a href="security-systems.html" class="btn btn-primary mt-3">Explore Solutions</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/residential-security-img.jpg" class="d-block w-100" alt="Residential Security">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Residential Protection</h3>
+                            <p>Keep your home and loved ones safe with our advanced home security systems.</p>
+                            <a href="security-systems.html" class="btn btn-primary mt-3">Home Solutions</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/networking-cables.jpg" class="d-block w-100" alt="IT Infrastructure">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>IT Infrastructure & Support</h3>
+                            <p>Complete IT solutions from network setup to cloud services and ongoing support.</p>
+                            <a href="it-services.html" class="btn btn-primary mt-3">IT Services</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-light-gray">
+        <div  class="container">
+            <h2 class="text-center section-title">Our Services</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="img/services/cctv-img-1.jpg" class="service-img" alt="CCTV Systems">
+                        <div class="card-body">
+                            <h4 class="card-title">CCTV Surveillance</h4>
+                            <p class="card-text">Advanced camera systems that provide crystal-clear monitoring of your property, accessible remotely through secure platforms.</p>
+                            <a href="products.html#services" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="img/services/access-control-img.jpg" class="service-img" alt="Access Control">
+                        <div class="card-body">
+                            <h4 class="card-title">Access Control</h4>
+                            <p class="card-text">Regulate who enters your facility with customizable access systems including keycard, biometric, and mobile solutions.</p>
+                            <a href="products.html#services" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="img/services/intrusion-alarm-img.jpeg" class="service-img" alt="Intrusion Detection">
+                        <div class="card-body">
+                            <h4 class="card-title">Intrusion / Panic Detection</h4>
+                            <p class="card-text">Comprehensive alarm systems that immediately alert you and security personnel to unauthorized access attempts.</p>
+                            <a href="products.html#services" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="img/services/electric-fencing.jpeg" class="service-img" alt="Electric Fencing">
+                        <div class="card-body">
+                            <h4 class="card-title">Electric Fencing</h4>
+                            <p class="card-text">Secure perimeter protection with monitored electric fencing systems that deter intruders and integrate with your security setup.</p>
+                            <a href="products.html#services" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="img/services/vms-monitoring-img.jpg" class="service-img" alt="Electric Fencing">
+                        <div class="card-body">
+                            <h4 class="card-title">Video Monitoring Centers</h4>
+                            <p class="card-text"> 24/7 Real-time Video and Alarm Monitoring Centers.</p>
+                            <a href="products.html#services" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="img/services/vehicle-tracking-img-1.jpeg" class="service-img" alt="Vehicle Tracking">
+                        <div class="card-body">
+                            <h4 class="card-title">Vehicle Tracking</h4>
+                            <p class="card-text">Real-time GPS tracking solutions for fleet management and theft recovery of your valuable vehicles.</p>
+                            <a href="products.html#services" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="img/services/datacenter-img-1.jpg" class="service-img" alt="IT Services">
+                        <div class="card-body">
+                            <h4 class="card-title">IT Solutions</h4>
+                            <p class="card-text">Complete IT infrastructure setup, cloud services, and technical support for businesses of all sizes.</p>
+                            <a href="products.html#services" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#services" class="btn btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="text-center section-title">Why Choose Safeworld Systems</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Expertise</h4>
+                        <p>Our team of certified professionals brings years of experience in security and IT implementation.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4>Cutting-Edge Technology</h4>
+                        <p>We utilize the latest innovations in security and IT to provide superior protection and functionality.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4>24/7 Support</h4>
+                        <p>Our dedicated team is available around the clock to address any issues or concerns.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h4>Cost-Effective</h4>
+                        <p>Customized solutions that provide maximum security while respecting your budget constraints.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Quote Form -->
+    <section id="quote" class="section-padding bg-light-gray">
+        <div  class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title text-start">Get a Quick Quote</h2>
+                    <p class="mb-4">Fill out this form and our experts will prepare a customized quote for your security or IT needs within 24 hours.</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> No obligation consultation</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Customized to your specific needs</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Transparent pricing with no hidden costs</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Professional installation and setup</li>
+                    </ul>
+                </div>
+
+                <!-- <section id="get-quote" class="section-padding bg-light-gray">
+                    <div class="container">
+                        <h2 class="section-title text-center">Request a Quote</h2>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <form action="https://formsubmit.co/safeworldsystems@gmail.com" method="POST" class="bg-white p-4 rounded shadow-sm">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Full Name</label>
+                                        <input type="text" name="name" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" name="email" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Message / Request Details</label>
+                                        <textarea name="message" rows="5" class="form-control" required></textarea>
+                                    </div>
+                                    <input type="hidden" name="_captcha" value="false">
+                                    <button type="submit" class="btn btn-primary w-100">Submit Quote Request</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section> -->
+                
+
+                <div class="col-lg-6">
+                    <div class="quote-form">
+                        <form id="quoteForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Full Name*" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Email Address*" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="tel" class="form-control" placeholder="Phone Number*" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-select form-control">
+                                        <option selected>Select Service</option>
+                                        <option value="cctv">CCTV Systems</option>
+                                        <option value="access">Access Control</option>
+                                        <option value="alarm">Alarm Systems</option>
+                                        <option value="fencing">Electric Fencing</option>
+                                        <option value="tracking">Vehicle Tracking</option>
+                                        <option value="it">IT Services</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <textarea class="form-control" rows="4" placeholder="Tell us about your requirements"></textarea>
+                            <button type="submit" class="btn btn-primary w-100">Submit Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item">
+                        <div class="stats-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stats-value">5+</div>
+                        <div class="stats-label">Happy Clients</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item">
+                        <div class="stats-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="stats-value">20+</div>
+                        <div class="stats-label">Projects Completed</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item">
+                        <div class="stats-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stats-value">2+</div>
+                        <div class="stats-label">Years Experience</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stats-item">
+                        <div class="stats-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="stats-value">5+</div>
+                        <div class="stats-label">Certified Experts</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="section-padding bg-light-gray">
+        <div class="container">
+            <h2 class="text-center section-title">Our Trusted Partners</h2>
+            <div class="row partners text-center">
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <img src="img/partners/dahua-technology-logo.png" alt="Partner 1" class="img-fluid">
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <img src="img/partners/hikvision-logo.png" alt="Partner 2" class="img-fluid">
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <img src="img/partners/honeywell-logo.png" alt="Partner 3" class="img-fluid">
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <img src="img/partners/jimi-iot-logo.png" alt="Partner 4" class="img-fluid">
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <img src="img/partners/recoda-shenzen.png" alt="Partner 5" class="img-fluid">
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                    <img src="img/partners/zkteco-logo.png" alt="Partner 6" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <!-- <section class="section-padding">
+        <div class="container">
+            <h2 class="text-center section-title">What Our Clients Say</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            "Safeworld Systems transformed our office security setup. Their team was professional, efficient, and the system they installed has been extremely reliable. Highly recommended!"
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="/api/placeholder/60/60" alt="Client" class="testimonial-avatar">
+                            <div class="author-info">
+                                <h5>Michael Agyapong</h5>
+                                <p>Head, Compliance, Agate Mabot Co. Ltd</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            "The IT infrastructure setup by Safeworld Systems has significantly improved our operational efficiency. Their ongoing support has been invaluable to our business success."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="/api/placeholder/60/60" alt="Client" class="testimonial-avatar">
+                            <div class="author-info">
+                                <h5>Desmond Dankwah</h5>
+                                <p>Information Technology, Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            "We've been using Safeworld's vehicle tracking service for our fleet of delivery trucks. The real-time monitoring and detailed reports have helped us optimize routes and improve customer service."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="/api/placeholder/60/60" alt="Client" class="testimonial-avatar">
+                            <div class="author-info">
+                                <h5>Dr. Thompson Appiah</h5>
+                                <p>Lead Physician, Cape Coast Teaching Hospital</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="mb-4">Ready to Secure Your Assets?</h2>
+                    <p class="mb-4">Contact our team today for a free consultation and discover how Safeworld Systems can provide tailored security and IT solutions for your specific needs.</p>
+                    <div>
+                        <a href="contact.html" class="btn btn-light me-3">Contact Us</a>
+                        <a href="#quote" class="btn btn-get-quote">Get a Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview Section -->
+    <!-- <section class="section-padding bg-light-gray">
+        <div class="container">
+            <h2 class="text-center section-title">Latest Security Insights</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <img src="/api/placeholder/400/250" class="card-img-top" alt="Blog Post">
+                        <div class="card-body">
+                            <h5 class="card-title">The Future of Smart Home Security</h5>
+                            <p class="card-text">Explore the latest trends and innovations in residential security systems and how they're changing the way we protect our homes.</p>
+                            <a href="blog-detail.html" class="btn btn-outline-primary">Read More</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <small>April 15, 2025</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <img src="/api/placeholder/400/250" class="card-img-top" alt="Blog Post">
+                        <div class="card-body">
+                            <h5 class="card-title">Essential IT Security Measures for Small Businesses</h5>
+                            <p class="card-text">Learn how small businesses can protect themselves from cyber threats without breaking their budget.</p>
+                            <a href="blog-detail.html" class="btn btn-outline-primary">Read More</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <small>April 10, 2025</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <img src="/api/placeholder/400/250" class="card-img-top" alt="Blog Post">
+                        <div class="card-body">
+                            <h5 class="card-title">The Role of AI in Modern Security Systems</h5>
+                            <p class="card-text">Discover how artificial intelligence is revolutionizing security monitoring and threat detection capabilities.</p>
+                            <a href="blog-detail.html" class="btn btn-outline-primary">Read More</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <small>April 5, 2025</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="blog.html" class="btn btn-primary">View All Articles</a>
+            </div>
+        </div>
+    </section> -->
+    <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">
+        ↑
+    </button>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <img src="img/safeworld-logo.png" alt="Safeworld Systems Logo" class="footer-logo">
+                    <p>Providing comprehensive security systems and IT solutions to protect what matters most to you and your business.</p>
+                    <div class="footer-social mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About Us</a></li>
+                        <li><a href="services.html" class="footer-link">Services</a></li>
+                        <li><a href="products.html" class="footer-link">Products</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Our Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="security-systems.html#cctv" class="footer-link">CCTV Systems</a></li>
+                        <li><a href="security-systems.html#access" class="footer-link">Access Control</a></li>
+                        <li><a href="security-systems.html#intrusion" class="footer-link">Intrusion Detection</a></li>
+                        <li><a href="security-systems.html#fencing" class="footer-link">Electric Fencing</a></li>
+                        <li><a href="it-services.html" class="footer-link">IT Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> GL-012-0108, Olooti Street, La Accra.</li>
+                        <li class="mb-2"><i class="fas fa-phone-alt me-2"></i> (233) 558 4804536</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> safeworldsystems@gmail.com</li>
+                        <li class="mb-2"><i class="fas fa-clock me-2"></i> Monday - Friday: 8AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center copyright">
+                <p>© 2025 Safeworld Systems. All Rights Reserved. | <a href="privacy-policy.html" class="text-white">Privacy Policy</a> | <a href="terms.html" class="text-white">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup Modal -->
+    <!-- <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+              <h5 class="modal-title" id="promoModalLabel">Special Announcement</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>🎉 Enjoy up to <strong>20% off</strong> on all security system installations this month!</p>
+              <p>📦 New product arrivals in our <a href="products.html">product section</a> — don’t miss out.</p>
+              <p>🔥 Giveaway alert: Follow us on social media and stand a chance to win a home alarm kit.</p>
+            </div>
+          </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header border-0 p-2">
+              <button type="button" class="btn-close ms-auto me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+              <img src="img/hikvision-wallpaper.jpg" alt="Promo Banner" class="img-fluid w-100 rounded-bottom">
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content overflow-hidden" style="max-height: 90vh;">
+            <div class="modal-body p-0 position-relative">
+              <!-- Close button overlay -->
+              <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" aria-label="Close"></button>
+      
+              <!-- Background Image -->
+              <img src="img/hikvision-wallpaper.jpg" alt="Promo Banner" class="img-fluid w-100" style="max-height: 80vh; object-fit: cover;">
+      
+              <!-- Text Overlay -->
+              <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white text-center px-4" style="background-color: rgba(0,0,0,0.4);">
+                <h2 class="display-5 fw-bold">🎉 Limited Time Offer!</h2>
+                <p class="lead">Get up to <strong>20% OFF</strong> all installations this month!</p>
+                <a href="index.html#quote" class="btn btn-warning fw-semibold mt-3">Get a Quote Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Form submission
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! Our team will contact you within 24 hours.');
+            this.reset();
+        });
+        
+        // Navbar scrolling effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar').classList.add('bg-white');
+            } else {
+                document.querySelector('.navbar').classList.remove('bg-white');
+            }
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const promoModal = new bootstrap.Modal(document.getElementById('promoModal'));
+            promoModal.show();
+        });
+    </script>
+
+    <script>
+        // Back to top button functionality
+        const backToTopBtn = document.getElementById("backToTopBtn");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+      </script>
+</body>

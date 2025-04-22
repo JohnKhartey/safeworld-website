@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Safeworld Systems</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+            --primary-color: #0056b3;
+            --secondary-color: #004494;
+            --accent-color: #ff6b00;
+            --light-gray: #f8f9fa;
+            --dark-gray: #343a40;
+        }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding-top: 80px;
+      background-color: #f8f9fa;
+    }
+
+    .navbar {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 15px 0;
+    }
+        
+    .navbar {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand img {
+            height: 50px;
+            visibility: visible;
+        }
+        
+        .nav-link {
+            color: var(--dark-gray) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link.active {
+            color: var(--primary-color) !important;
+            border-bottom: 2px solid var(--primary-color);
+        }
+    
+    .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        padding: 10px 25px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+    
+    .btn-primary:hover {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-outline-primary {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+        padding: 10px 25px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+    
+    .btn-outline-primary:hover {
+        background-color: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background-color: #ff6b00;
+      margin: 15px auto 0;
+    }
+
+    .page-header {
+            /* background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1920/500') center/cover no-repeat; */
+            background: linear-gradient(26deg,rgb(193, 121, 77) 15%, rgb(57, 130, 214) 11%, rgb(12, 104, 209) 59%);;
+            color: white;
+            padding: 80px 0;
+            margin-top: -20px;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .bg-light-gray {
+            background-color: var(--light-gray);
+        }
+
+    .contact-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+    }
+
+    .contact-icon {
+      font-size: 2rem;
+      color: #0056b3;
+      margin-bottom: 15px;
+    }
+
+    .map-responsive {
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+      height: 0;
+    }
+
+    .map-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        
+        .right::after {
+            left: -13px;
+        }
+
+    .footer {
+            background-color: var(--dark-gray);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .footer h5 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s;
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+        
+        .footer-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .footer-social a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 30px;
+        }
+
+        .carousel-inner {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .carousel-item {
+            height: 500px;
+        }
+        
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .carousel-control-prev, .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.8;
+        }
+        
+        .carousel-control-prev {
+            left: 20px;
+        }
+        
+        .carousel-control-next {
+            right: 20px;
+        }
+        
+        .btn-get-quote {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        #backToTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 99;
+      font-size: 20px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    #backToTopBtn:hover {
+      background-color: var(--secondary-color);
+    }
+        
+        .btn-get-quote:hover {
+            background-color: #e55f00;
+            border-color: #e55f00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            
+            .left::after, .right::after {
+                left: 18px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="img/safeworld-logo.png" alt="Safeworld Systems Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="products.html">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="contacts.html">Contact</a>
+                </li>
+            </ul>
+            <a href="index.html#quote" class="btn btn-primary ms-3">Request Quote</a>
+        </div>
+    </div>
+</nav>
+
+  <!-- Contact Info -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="contact-box text-center">
+            <div class="contact-icon"><i class="fas fa-building"></i></div>
+            <h5>Business Inquiries</h5>
+            <p>safeworldsystems@gmail.com<br>+233 55 480 4536</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-box text-center">
+            <div class="contact-icon"><i class="fas fa-dollar-sign"></i></div>
+            <h5>Finance</h5>
+            <p>finance.safeworldsystems@gmail.com<br>+233 59 509 3277</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-box text-center">
+            <div class="contact-icon"><i class="fas fa-info-circle"></i></div>
+            <h5>General Info</h5>
+            <p>safeworldsystems@gmail.com<br>+233 55 480 4536</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Our Location</h2>
+      <div class="map-responsive mb-4">
+        <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=olooti%20+(burkina%20pub)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/collections/personal-trackers/">gps trackers</a></iframe></div>
+        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.645991734882!2d-0.1869645!3d5.5605482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9b428180f82f%3A0xc833e0b01d8772a7!2sAccra%20Mall!5e0!3m2!1sen!2sgh!4v1713542519844" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Contact -->
+  <section class="py-5 text-center">
+    <div class="container">
+      <h2 class="section-title">Send Us a WhatsApp</h2>
+      <p>Tap the button below to start a chat with us on WhatsApp.</p>
+      <a href="https://wa.me/233200001111" class="btn btn-success btn-lg" target="_blank">
+        <i class="fab fa-whatsapp me-2"></i>Chat on WhatsApp
+      </a>
+    </div>
+  </section>
+
+   <!-- Back to Top Section -->
+   <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">
+    ↑
+</button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <img src="img/safeworld-logo.png" alt="Safeworld Systems Logo" class="footer-logo">
+                <p>Providing comprehensive security systems and IT solutions to protect what matters most to you and your business.</p>
+                <div class="footer-social mt-3">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="footer-link">Home</a></li>
+                    <li><a href="about.html" class="footer-link">About Us</a></li>
+                    <li><a href="services.html" class="footer-link">Services</a></li>
+                    <li><a href="products.html" class="footer-link">Products</a></li>
+                    <li><a href="contact.html" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5>Our Services</h5>
+                <ul class="list-unstyled">
+                    <li><a href="security-systems.html#cctv" class="footer-link">CCTV Systems</a></li>
+                    <li><a href="security-systems.html#access" class="footer-link">Access Control</a></li>
+                    <li><a href="security-systems.html#intrusion" class="footer-link">Intrusion Detection</a></li>
+                    <li><a href="security-systems.html#fencing" class="footer-link">Electric Fencing</a></li>
+                    <li><a href="it-services.html" class="footer-link">IT Solutions</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5>Contact Info</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> GL-012-0108, Olooti Street, La Accra.</li>
+                    <li class="mb-2"><i class="fas fa-phone-alt me-2"></i> (233) 558 4804536</li>
+                    <li class="mb-2"><i class="fas fa-envelope me-2"></i> safeworldsystems@gmail.com</li>
+                    <li class="mb-2"><i class="fas fa-clock me-2"></i> Monday - Friday: 8AM - 6PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center copyright">
+            <p>© 2025 Safeworld Systems. All Rights Reserved. | <a href="privacy-policy.html" class="text-white">Privacy Policy</a> | <a href="terms.html" class="text-white">Terms of Service</a></p>
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Back to top button functionality
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopBtn.style.display = "block";
+        } else {
+            backToTopBtn.style.display = "none";
+        }
+    };
+
+    function scrollToTop() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+  </script>
+</body>
+</html>
