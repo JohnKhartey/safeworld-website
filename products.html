@@ -223,7 +223,7 @@
             right: 20px;
         }
 
-        #backToTopBtn {
+        /* #backToTopBtn {
       position: fixed;
       bottom: 30px;
       right: 30px;
@@ -242,7 +242,31 @@
 
     #backToTopBtn:hover {
       background-color: var(--secondary-color);
+    } */
+
+    #scrollToggleBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 99;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 22px;
+      line-height: 45px;
+      text-align: center;
+      padding: 0;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
+
+        #scrollToggleBtn:hover {
+            background-color: var(--secondary-color);
+        }
 
   </style>
 </head>
@@ -283,7 +307,7 @@
       <h2 class="section-title">Products & Systems We Use</h2>
 
       <!-- CCTV Products -->
-      <h4 class="mb-4 mt-5">CCTV Systems</h4>
+      <h4 id="cctv" class="mb-4 mt-5">CCTV Systems</h4>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="product-card">
@@ -312,10 +336,43 @@
             </div>
           </div>
         </div>
+
+
+        <!-- Access Control Systems -->
+      <h4 id="access" class="mb-4 mt-5">Access Control</h4>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="product-card">
+            <img src="./img/products/ZkTeco/FR-1500.png" alt="Fingerprint Reader">
+            <div class="product-info">
+              <h6>Fingerprint Reader</h6>
+              <small>ZKTECO</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="product-card">
+            <img src="./img/products/ZkTeco/inBio460Pro Plus Package.jpg" alt="InBio Pro">
+            <div class="product-info">
+              <h6>InBio Pro - Network Access Control</h6>
+              <small>ZKTECO</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="product-card">
+            <img src="./img/products/ZkTeco/F18-Reader.png" alt="F18 Reader">
+            <div class="product-info">
+              <h6>Standalone Terminal - F18</h6>
+              <small>ZKTECO</small>
+            </div>
+          </div>
+        </div>
+      </div>
     
 
       <!-- Intrusion Systems -->
-      <h4 class="mb-4 mt-5">Intrusion Detection</h4>
+      <h4 id="ids" class="mb-4 mt-5">Intrusion Detection</h4>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="product-card">
@@ -347,7 +404,7 @@
       </div>
 
       <!-- IT Services -->
-      <h4 class="mb-4 mt-5">IT Services & Networking</h4>
+      <h4 id="it-services" class="mb-4 mt-5">IT Services & Networking</h4>
       <div class="row g-4">
         <div class="col-md-3">
           <div class="product-card">
@@ -376,10 +433,19 @@
             </div>
           </div>
         </div>
+        <div class="col-md-3">
+          <div class="product-card">
+            <img src="./img/products/tp-link-dualband-router.jpg" alt="Router">
+            <div class="product-info">
+              <h6>Wireless Router</h6>
+              <small>TP-Link </small>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Fire Alarm & Detection System -->
-      <h4 class="mb-4 mt-5">Fire Alarm & Detection </h4>
+      <h4 id="fire-alarm" class="mb-4 mt-5">Fire Alarm & Detection </h4>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="product-card">
@@ -410,8 +476,40 @@
         </div>
       </div>
 
+      <!-- Electric Fencing System -->
+      <h4 id="fencing" class="mb-4 mt-5">Electric Fencing </h4>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="product-card">
+            <img src="./img/products/Nemtek/Nemtek-Warning-Sign.jpg" alt="Warning Sign">
+            <div class="product-info">
+              <h6>Warning Sign</h6>
+              <small>Nemtek</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="product-card">
+            <img src="./img/products/Nemtek/fence-energizer.jpg" alt="Energizer">
+            <div class="product-info">
+              <h6>Fence Energizer</h6>
+              <small>Nemtek</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="product-card">
+            <img src="./img/products/Nemtek/8-line-sq-tube-shield-t-pole-black.jpg" alt="Fence Pole">
+            <div class="product-info">
+              <h6> 8-line Fence Pole</h6>
+              <small>Nemtek</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Vehicle Tracking -->
-      <h4 class="mb-4 mt-5">Vehicle Tracking</h4>
+      <h4 id="vehicle-tracking" class="mb-4 mt-5">Vehicle Tracking</h4>
       <div class="row g-4">
         <div class="col-md-3">
           <div class="product-card">
@@ -426,8 +524,8 @@
           <div class="product-card">
             <img src="./img/products/Jimi IoT/tracksolidpro-software.jpg" alt="Monitoring Software">
             <div class="product-info">
-              <h6>Fleet Monitoring Software</h6>
-              <small>Tracksolid</small>
+              <h6>Tracksolid-Pro Platform</h6>
+              <small> Jimi IoT</small>
             </div>
           </div>
         </div>
@@ -440,15 +538,15 @@
   </section>
 
 
-    <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">
-       ↑
+    <button id="scrollToggleBtn" title="Scroll">
+      ↑
     </button>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4">
-                    <img src="/html/safeworld-logo.png" alt="Safeworld Systems Logo" class="footer-logo">
+                    <img src="./safeworld-logo.png" alt="Safeworld Systems Logo" class="footer-logo">
                     <p>Providing comprehensive security systems and IT solutions to protect what matters most to you and your business.</p>
                     <div class="footer-social mt-3">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -463,17 +561,18 @@
                         <li><a href="index.html" class="footer-link">Home</a></li>
                         <li><a href="about.html" class="footer-link">About Us</a></li>
                         <li><a href="products.html" class="footer-link">Products</a></li>
-                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                        <li><a href="contacts.html" class="footer-link">Contact</a></li>
                     </ul>
                 </div>
                 <div id="product_services" class="col-lg-3 col-md-6 mb-4">
                     <h5>Our Services</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#product_services" class="footer-link">CCTV Systems</a></li>
-                        <li><a href="#product_services" class="footer-link">Access Control</a></li>
-                        <li><a href="#product_services" class="footer-link">Intrusion Detection</a></li>
-                        <li><a href="#product_services" class="footer-link">Electric Fencing</a></li>
-                        <li><a href="#product_services" class="footer-link">IT Solutions</a></li>
+                        <li><a href="#cctv" class="footer-link">CCTV Systems</a></li>
+                        <li><a href="#access" class="footer-link">Access Control</a></li>
+                        <li><a href="#ids" class="footer-link">Intrusion Detection</a></li>
+                        <li><a href="#fencing" class="footer-link">Electric Fencing</a></li>
+                        <li><a href="#vehicle-tracking" class="footer-link">Vehicle Tracking</a></li>
+                        <li><a href="#it-services" class="footer-link">IT Solutions</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
@@ -510,20 +609,40 @@
         });
 
     // Back to top button functionality
-    const backToTopBtn = document.getElementById("backToTopBtn");
+    const scrollBtn = document.getElementById("scrollToggleBtn");
+        let lastScrollTop = 0;
 
-    window.onscroll = function() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            backToTopBtn.style.display = "block";
+        window.addEventListener("scroll", () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+        // Show the button if not at the very top
+        if (scrollTop > 100) {
+          scrollBtn.style.display = "block";
         } else {
-            backToTopBtn.style.display = "none";
+          scrollBtn.style.display = "none";
         }
-    };
-
-    function scrollToTop() {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    }
+    
+        // Determine scroll direction and update icon
+        if (scrollTop > lastScrollTop) {
+          // Scrolling down
+          scrollBtn.innerText = "↓";
+          scrollBtn.onclick = scrollToBottom;
+        } else {
+          // Scrolling up
+          scrollBtn.innerText = "↑";
+          scrollBtn.onclick = scrollToTop;
+        }
+    
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative
+        });
+    
+        function scrollToTop() {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    
+        function scrollToBottom() {
+          window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+        }
   </script>
 </body>
 </html>

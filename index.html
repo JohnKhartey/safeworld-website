@@ -86,7 +86,7 @@
 
         .hero {
             /* background: linear-gradient(nulldeg, rgba(29, 12, 97, 1) 17%, rgba(219, 127, 66, 1) 72%); */
-            background: linear-gradient(rgba(61, 104, 197, 0.6), rgba(223, 106, 27, 0.7)), url('./img/hero-background-img.jpeg') center/cover no-repeat;
+            background: linear-gradient(rgba(55, 84, 149, 0.6), rgba(223, 134, 26, 0.7)), url('./img/hero-background-img.jpeg') center/cover no-repeat;
             color: white;
             padding: 150px 0;
             text-align: center;
@@ -400,25 +400,29 @@
              scroll-behavior: smooth;
         }
 
-        #backToTopBtn {
+
+        #scrollToggleBtn {
             position: fixed;
             bottom: 30px;
             right: 30px;
             z-index: 99;
-            font-size: 20px;
-            background-color: #0056b3;
+            background-color: var(--primary-color);
             color: white;
             border: none;
             border-radius: 50%;
             width: 45px;
             height: 45px;
+            font-size: 22px;
+            line-height: 45px;
+            text-align: center;
+            padding: 0;
             cursor: pointer;
             display: none;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
-        #backToTopBtn:hover {
-            background-color: #004494;
+        #scrollToggleBtn:hover {
+            background-color: var(--secondary-color);
         }
     </style>
 </head>
@@ -579,7 +583,7 @@
                     <div class="service-card">
                         <img src="img/services/vms-monitoring-img.jpg" class="service-img" alt="Electric Fencing">
                         <div class="card-body">
-                            <h4 class="card-title">Video Monitoring Centers</h4>
+                            <h4 class="card-title">Central Video Monitoring Station </h4>
                             <p class="card-text"> 24/7 Real-time Video and Alarm Monitoring Centers.</p>
                             <a href="products.html#services" class="btn btn-outline-primary">Learn More</a>
                         </div>
@@ -924,9 +928,10 @@
             </div>
         </div>
     </section> -->
-    <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">
+
+    <button id="scrollToggleBtn" title="Scroll">
         ↑
-    </button>
+      </button>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -954,11 +959,11 @@
                 <div class="col-lg-3 col-md-6 mb-4">
                     <h5>Our Services</h5>
                     <ul class="list-unstyled">
-                        <li><a href="security-systems.html#cctv" class="footer-link">CCTV Systems</a></li>
-                        <li><a href="security-systems.html#access" class="footer-link">Access Control</a></li>
-                        <li><a href="security-systems.html#intrusion" class="footer-link">Intrusion Detection</a></li>
-                        <li><a href="security-systems.html#fencing" class="footer-link">Electric Fencing</a></li>
-                        <li><a href="it-services.html" class="footer-link">IT Solutions</a></li>
+                        <li><a href="products.html#cctv" class="footer-link">CCTV Systems</a></li>
+                        <li><a href="products.html#access" class="footer-link">Access Control</a></li>
+                        <li><a href="products.html#ids" class="footer-link">Intrusion Detection</a></li>
+                        <li><a href="products.html#fencing" class="footer-link">Electric Fencing</a></li>
+                        <li><a href="products.html#it-services" class="footer-link">IT Solutions</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
@@ -978,35 +983,6 @@
     </footer>
 
     <!-- Popup Modal -->
-    <!-- <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
-              <h5 class="modal-title" id="promoModalLabel">Special Announcement</h5>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <p>🎉 Enjoy up to <strong>20% off</strong> on all security system installations this month!</p>
-              <p>📦 New product arrivals in our <a href="products.html">product section</a> — don’t miss out.</p>
-              <p>🔥 Giveaway alert: Follow us on social media and stand a chance to win a home alarm kit.</p>
-            </div>
-          </div>
-        </div>
-    </div> -->
-
-    <!-- <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header border-0 p-2">
-              <button type="button" class="btn-close ms-auto me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body p-0">
-              <img src="img/hikvision-wallpaper.jpg" alt="Promo Banner" class="img-fluid w-100 rounded-bottom">
-            </div>
-          </div>
-        </div>
-      </div> -->
-
       <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
           <div class="modal-content overflow-hidden" style="max-height: 90vh;">
@@ -1015,13 +991,16 @@
               <button type="button" class="btn-close position-absolute top-0 end-0 m-3 z-3" data-bs-dismiss="modal" aria-label="Close"></button>
       
               <!-- Background Image -->
-              <img src="img/hikvision-wallpaper.jpg" alt="Promo Banner" class="img-fluid w-100" style="max-height: 80vh; object-fit: cover;">
+              <img src="./img/installer-modal-img.jpg" alt="Promo Banner" class="img-fluid w-100" style="max-height: 80vh; object-fit: cover;">
       
               <!-- Text Overlay -->
               <div class="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white text-center px-4" style="background-color: rgba(0,0,0,0.4);">
                 <h2 class="display-5 fw-bold">🎉 Limited Time Offer!</h2>
                 <p class="lead">Get up to <strong>20% OFF</strong> all installations this month!</p>
-                <a href="index.html#quote" class="btn btn-warning fw-semibold mt-3">Get a Quote Now</a>
+                <!-- <a href="index.html#quote" class="btn btn-warning fw-semibold mt-3">Get a Quote Now</a> -->
+                <a href="index.html#quote" class="btn btn-warning fw-semibold mt-3" id="quoteBtnFromModal">
+                    Get a Quote Now
+                  </a>
               </div>
             </div>
           </div>
@@ -1057,20 +1036,52 @@
     </script>
 
     <script>
-        // Back to top button functionality
-        const backToTopBtn = document.getElementById("backToTopBtn");
+        const scrollBtn = document.getElementById("scrollToggleBtn");
+        let lastScrollTop = 0;
 
-        window.onscroll = function() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                backToTopBtn.style.display = "block";
-            } else {
-                backToTopBtn.style.display = "none";
-            }
-        };
-
-        function scrollToTop() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        window.addEventListener("scroll", () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+        // Show the button if not at the very top
+        if (scrollTop > 100) {
+          scrollBtn.style.display = "block";
+        } else {
+          scrollBtn.style.display = "none";
         }
+    
+        // Determine scroll direction and update icon
+        if (scrollTop > lastScrollTop) {
+          // Scrolling down
+          scrollBtn.innerText = "↓";
+          scrollBtn.onclick = scrollToBottom;
+        } else {
+          // Scrolling up
+          scrollBtn.innerText = "↑";
+          scrollBtn.onclick = scrollToTop;
+        }
+    
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative
+        });
+    
+        function scrollToTop() {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    
+        function scrollToBottom() {
+          window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+        }
+      </script>
+      <script>
+        document.getElementById('quoteBtnFromModal').addEventListener('click', function (e) {
+          // Close the modal
+          const modal = bootstrap.Modal.getInstance(document.getElementById('promoModal'));
+          modal.hide();
+      
+          // Let the browser follow the link after a short delay
+          setTimeout(() => {
+            window.location.href = this.getAttribute('href');
+          }, 300); // enough time for fade-out
+          e.preventDefault(); // prevent immediate jump
+        });
       </script>
 </body>
