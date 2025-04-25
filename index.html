@@ -742,12 +742,17 @@
                 <div class="col-lg-6">
                     <div class="quote-form">
                         <form id="quoteForm" action="https://formsubmit.co/safeworldsystems@gmail.com" method="POST" class="bg-white p-4 rounded shadow-sm">
+                            <input type="hidden" name="_cc" value="finance.safeworldsystems@gmail.com,johnkhartey5@gmail.com">
+                            <input type="hidden" name="_subject" value="New Quote Request from Website">
+                            <input type="hidden" name="_next" value="https://www.safeworldsystems.com/thank-you.html">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="basic">
                             <div class="row">
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" placeholder="Full Name*" name="Name" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="email" class="form-control" placeholder="Email Address*" name="Email" required>
+                                    <input type="email" class="form-control" placeholder="Email Address*" name="Email Address" required>
                                 </div>
                             </div>
                             <div class="row">
@@ -755,7 +760,7 @@
                                     <input type="tel" class="form-control" placeholder="Phone Number*" name="Phone Number" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <select class="form-select form-control" name="Service/Systems">
+                                    <select class="form-select form-control" name="Services/Systems">
                                         <option selected>Select Service</option>
                                         <option value="cctv">CCTV Systems</option>
                                         <option value="access">Access Control</option>
@@ -1055,11 +1060,11 @@
     <!-- Custom JavaScript -->
     <script>
         // Form submission
-        document.getElementById('quoteForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your inquiry! Our team will contact you within 24 hours.');
-            this.reset();
-        });
+        // document.getElementById('quoteForm').addEventListener('submit', function(e) {
+        //     e.preventDefault();
+        //     alert('Thank you for your inquiry! Our team will contact you within 24 hours.');
+        //     this.reset();
+        // });
         
         // Navbar scrolling effect
         window.addEventListener('scroll', function() {
