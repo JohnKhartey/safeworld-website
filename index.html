@@ -1012,10 +1012,10 @@
             }
         });
 
-        window.addEventListener('DOMContentLoaded', () => {
-            const promoModal = new bootstrap.Modal(document.getElementById('promoModal'));
-            promoModal.show();
-        });
+        // window.addEventListener('DOMContentLoaded', () => {
+        //     const promoModal = new bootstrap.Modal(document.getElementById('promoModal'));
+        //     promoModal.show();
+        // });
     </script>
 
     <script>
@@ -1065,6 +1065,18 @@
             window.location.href = this.getAttribute('href');
           }, 300); // enough time for fade-out
           e.preventDefault(); // prevent immediate jump
+        });
+      </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // Check if the modal was shown before
+          if (!localStorage.getItem("promoModalShown")) {
+            const promoModal = new bootstrap.Modal(document.getElementById('promoModal'));
+            promoModal.show();
+      
+            // Mark as shown
+            localStorage.setItem("promoModalShown", "true");
+          }
         });
       </script>
 </body>
